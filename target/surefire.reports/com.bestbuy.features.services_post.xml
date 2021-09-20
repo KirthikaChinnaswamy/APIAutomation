@@ -1,0 +1,34 @@
+<testsuite failures="0" name="com.bestbuy.features/services_post.feature" skipped="0" tests="2" time="0.652203">
+  <testcase classname="com.bestbuy.features.services_post" name="verify valid response for services" time="0.628982">
+    <system-out>* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given def value = payload_valid ........................................... passed
+And request value ......................................................... passed
+When method post .......................................................... passed
+And status 201 ............................................................ passed
+And match response.name == payload_valid.name ............................. passed
+And match $ contains { id:"#number" } ..................................... passed</system-out>
+  </testcase>
+  <testcase classname="com.bestbuy.features.services_post" name="verify invalid response for services" time="0.023221">
+    <system-out>* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given def value = payload_valid ........................................... passed
+And request value ......................................................... passed
+When method post .......................................................... passed
+And status 201 ............................................................ passed
+And match response.name == payload_valid.name ............................. passed
+And match $ contains { id:"#number" } ..................................... passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given def value = payload_invalid.input ................................... passed
+And print value ........................................................... passed
+And request value ......................................................... passed
+When method post .......................................................... passed
+And status 400 ............................................................ passed
+And print response ........................................................ passed
+And match response == payload_invalid.data ................................ passed</system-out>
+  </testcase>
+</testsuite>

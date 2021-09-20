@@ -1,0 +1,178 @@
+<testsuite failures="0" name="com.bestbuy.features/services_get.feature" skipped="0" tests="6" time="0.270828">
+  <testcase classname="com.bestbuy.features.services_get" name="verify response for services" time="0.054576">
+    <system-out>* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given method get .......................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { total:"#number" } .................................. passed
+And match $ contains { data: '#[]' } ...................................... passed
+Then assert responseStatus == status.code200 .............................. passed</system-out>
+  </testcase>
+  <testcase classname="com.bestbuy.features.services_get" name="verify name by passing valid id" time="0.063603">
+    <system-out>* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given method get .......................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { total:"#number" } .................................. passed
+And match $ contains { data: '#[]' } ...................................... passed
+Then assert responseStatus == status.code200 .............................. passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param id = validdata.data[0].id ..................................... passed
+When method get ........................................................... passed
+And status 200 ............................................................ passed
+And match response.data[0].name == validdata.data[0].name ................. passed
+And match response == validdata ........................................... passed</system-out>
+  </testcase>
+  <testcase classname="com.bestbuy.features.services_get" name="Get id using name" time="0.057139">
+    <system-out>* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given method get .......................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { total:"#number" } .................................. passed
+And match $ contains { data: '#[]' } ...................................... passed
+Then assert responseStatus == status.code200 .............................. passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param id = validdata.data[0].id ..................................... passed
+When method get ........................................................... passed
+And status 200 ............................................................ passed
+And match response.data[0].name == validdata.data[0].name ................. passed
+And match response == validdata ........................................... passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param name = validdata.data[0].name ................................. passed
+When method get ........................................................... passed
+And status 200 ............................................................ passed
+And match response.data[0].id == validdata.data[0].id ..................... passed</system-out>
+  </testcase>
+  <testcase classname="com.bestbuy.features.services_get" name="verify zero data with invalid id" time="0.028434">
+    <system-out>* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given method get .......................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { total:"#number" } .................................. passed
+And match $ contains { data: '#[]' } ...................................... passed
+Then assert responseStatus == status.code200 .............................. passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param id = validdata.data[0].id ..................................... passed
+When method get ........................................................... passed
+And status 200 ............................................................ passed
+And match response.data[0].name == validdata.data[0].name ................. passed
+And match response == validdata ........................................... passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param name = validdata.data[0].name ................................. passed
+When method get ........................................................... passed
+And status 200 ............................................................ passed
+And match response.data[0].id == validdata.data[0].id ..................... passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param id = zerodata.id .............................................. passed
+When method get ........................................................... passed
+And status 200 ............................................................ passed
+And match $ contains { total:0 } .......................................... passed
+And assert response.total == 0 ............................................ passed
+And match response == zerodata.data ....................................... passed</system-out>
+  </testcase>
+  <testcase classname="com.bestbuy.features.services_get" name="verify 500 response with invalid parameter" time="0.042553">
+    <system-out>* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given method get .......................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { total:"#number" } .................................. passed
+And match $ contains { data: '#[]' } ...................................... passed
+Then assert responseStatus == status.code200 .............................. passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param id = validdata.data[0].id ..................................... passed
+When method get ........................................................... passed
+And status 200 ............................................................ passed
+And match response.data[0].name == validdata.data[0].name ................. passed
+And match response == validdata ........................................... passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param name = validdata.data[0].name ................................. passed
+When method get ........................................................... passed
+And status 200 ............................................................ passed
+And match response.data[0].id == validdata.data[0].id ..................... passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param id = zerodata.id .............................................. passed
+When method get ........................................................... passed
+And status 200 ............................................................ passed
+And match $ contains { total:0 } .......................................... passed
+And assert response.total == 0 ............................................ passed
+And match response == zerodata.data ....................................... passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param ids = error500.id ............................................. passed
+When method get ........................................................... passed
+And status 500 ............................................................ passed
+And match response == error500.data ....................................... passed</system-out>
+  </testcase>
+  <testcase classname="com.bestbuy.features.services_get" name="verify 404 response with invalid id" time="0.024524">
+    <system-out>* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given method get .......................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { total:"#number" } .................................. passed
+And match $ contains { data: '#[]' } ...................................... passed
+Then assert responseStatus == status.code200 .............................. passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param id = validdata.data[0].id ..................................... passed
+When method get ........................................................... passed
+And status 200 ............................................................ passed
+And match response.data[0].name == validdata.data[0].name ................. passed
+And match response == validdata ........................................... passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param name = validdata.data[0].name ................................. passed
+When method get ........................................................... passed
+And status 200 ............................................................ passed
+And match response.data[0].id == validdata.data[0].id ..................... passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param id = zerodata.id .............................................. passed
+When method get ........................................................... passed
+And status 200 ............................................................ passed
+And match $ contains { total:0 } .......................................... passed
+And assert response.total == 0 ............................................ passed
+And match response == zerodata.data ....................................... passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given param ids = error500.id ............................................. passed
+When method get ........................................................... passed
+And status 500 ............................................................ passed
+And match response == error500.data ....................................... passed
+* url 'http://localhost:3030/services' .................................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/services.json') ....... passed
+Given path error404.id .................................................... passed
+When method get ........................................................... passed
+And status 404 ............................................................ passed
+And match response == error404.data ....................................... passed</system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,209 @@
+21:47:59.551 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
+21:48:00.141 request:
+1 > POST http://localhost:3030/services
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Content-Length: 22
+1 > Content-Type: application/json; charset=UTF-8
+1 > Host: localhost:3030
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_291)
+{"name":"New Service"}
+
+21:48:00.179 response time in milliseconds: 36.65
+1 < 201
+1 < Access-Control-Allow-Origin: *
+1 < Allow: GET,POST,PUT,PATCH,DELETE
+1 < Connection: keep-alive
+1 < Content-Length: 108
+1 < Content-Type: application/json; charset=utf-8
+1 < Date: Mon, 30 Aug 2021 16:18:00 GMT
+1 < ETag: W/"6c-C98eFDkhUF/Ymqx9462WPfssKbU"
+1 < Keep-Alive: timeout=5
+1 < Vary: Accept, Accept-Encoding
+1 < X-Powered-By: Express
+{"id":65,"name":"New Service","updatedAt":"2021-08-30T16:18:00.167Z","createdAt":"2021-08-30T16:18:00.167Z"}
+
+21:48:00.211 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
+21:48:00.218 [print] {
+  "names": "New Service"
+}
+
+21:48:00.219 request:
+1 > POST http://localhost:3030/services
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Content-Length: 23
+1 > Content-Type: application/json; charset=UTF-8
+1 > Host: localhost:3030
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_291)
+{"names":"New Service"}
+
+21:48:00.231 response time in milliseconds: 10.87
+1 < 400
+1 < Access-Control-Allow-Origin: *
+1 < Allow: GET,POST,PUT,PATCH,DELETE
+1 < Connection: keep-alive
+1 < Content-Length: 198
+1 < Content-Type: application/json; charset=utf-8
+1 < Date: Mon, 30 Aug 2021 16:18:00 GMT
+1 < ETag: W/"c6-HfA/WyLyH4pus/0rWaCwrxjuspU"
+1 < Keep-Alive: timeout=5
+1 < Vary: Accept-Encoding
+1 < X-Powered-By: Express
+{"name":"BadRequest","message":"Invalid Parameters","code":400,"className":"bad-request","data":{},"errors":["should NOT have additional properties: 'names'","should have required property 'name'"]}
+
+21:48:00.231 [print] {
+  "code": 400,
+  "data": {
+  },
+  "name": "BadRequest",
+  "className": "bad-request",
+  "message": "Invalid Parameters",
+  "errors": [
+    "should NOT have additional properties: 'names'",
+    "should have required property 'name'"
+  ]
+}
+
+21:48:00.318 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
+21:48:00.323 request:
+1 > GET http://localhost:3030/services
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:3030
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_291)
+
+21:48:00.351 response time in milliseconds: 24.13
+1 < 200
+1 < Access-Control-Allow-Origin: *
+1 < Allow: GET,POST,PUT,PATCH,DELETE
+1 < Connection: keep-alive
+1 < Content-Type: application/json; charset=utf-8
+1 < Date: Mon, 30 Aug 2021 16:18:00 GMT
+1 < ETag: W/"4ab-ToVGzR/FELXOrrN2bLrjy1Du7TU"
+1 < Keep-Alive: timeout=5
+1 < Transfer-Encoding: chunked
+1 < Vary: Accept, Accept-Encoding
+1 < X-Powered-By: Express
+{"total":65,"limit":10,"skip":0,"data":[{"id":1,"name":"Geek Squad Services","createdAt":"2016-11-17T17:56:35.881Z","updatedAt":"2016-11-17T17:56:35.881Z"},{"id":2,"name":"Best Buy Mobile","createdAt":"2016-11-17T17:56:35.881Z","updatedAt":"2016-11-17T17:56:35.881Z"},{"id":3,"name":"Best Buy For Business","createdAt":"2016-11-17T17:56:35.881Z","updatedAt":"2016-11-17T17:56:35.881Z"},{"id":4,"name":"Apple Shop","createdAt":"2016-11-17T17:56:35.881Z","updatedAt":"2016-11-17T17:56:35.881Z"},{"id":5,"name":"Hablamos Español","createdAt":"2016-11-17T17:56:35.881Z","updatedAt":"2016-11-17T17:56:35.881Z"},{"id":6,"name":"Camera Experience Shop ","createdAt":"2016-11-17T17:56:35.881Z","updatedAt":"2016-11-17T17:56:35.881Z"},{"id":7,"name":"Electronics Recycling","createdAt":"2016-11-17T17:56:35.881Z","updatedAt":"2016-11-17T17:56:35.881Z"},{"id":8,"name":"Magnolia Home Theater","createdAt":"2016-11-17T17:56:35.881Z","updatedAt":"2016-11-17T17:56:35.881Z"},{"id":9,"name":"Samsung Experience Shop","createdAt":"2016-11-17T17:56:35.881Z","updatedAt":"2016-11-17T17:56:35.881Z"},{"id":10,"name":"Windows Store","createdAt":"2016-11-17T17:56:35.881Z","updatedAt":"2016-11-17T17:56:35.881Z"}]}
+
+21:48:00.382 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
+21:48:00.414 request:
+1 > GET http://localhost:3030/services?id=3
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:3030
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_291)
+
+21:48:00.434 response time in milliseconds: 14.67
+1 < 200
+1 < Access-Control-Allow-Origin: *
+1 < Allow: GET,POST,PUT,PATCH,DELETE
+1 < Connection: keep-alive
+1 < Content-Length: 158
+1 < Content-Type: application/json; charset=utf-8
+1 < Date: Mon, 30 Aug 2021 16:18:00 GMT
+1 < ETag: W/"9e-wWNfXCAtKjBkM3T93Zql9GljlLY"
+1 < Keep-Alive: timeout=5
+1 < Vary: Accept, Accept-Encoding
+1 < X-Powered-By: Express
+{"total":1,"limit":10,"skip":0,"data":[{"id":3,"name":"Best Buy For Business","createdAt":"2016-11-17T17:56:35.881Z","updatedAt":"2016-11-17T17:56:35.881Z"}]}
+
+21:48:00.457 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
+21:48:00.495 request:
+1 > GET http://localhost:3030/services?name=Best+Buy+For+Business
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:3030
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_291)
+
+21:48:00.510 response time in milliseconds: 14.20
+1 < 200
+1 < Access-Control-Allow-Origin: *
+1 < Allow: GET,POST,PUT,PATCH,DELETE
+1 < Connection: keep-alive
+1 < Content-Length: 158
+1 < Content-Type: application/json; charset=utf-8
+1 < Date: Mon, 30 Aug 2021 16:18:00 GMT
+1 < ETag: W/"9e-wWNfXCAtKjBkM3T93Zql9GljlLY"
+1 < Keep-Alive: timeout=5
+1 < Vary: Accept, Accept-Encoding
+1 < X-Powered-By: Express
+{"total":1,"limit":10,"skip":0,"data":[{"id":3,"name":"Best Buy For Business","createdAt":"2016-11-17T17:56:35.881Z","updatedAt":"2016-11-17T17:56:35.881Z"}]}
+
+21:48:00.541 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
+21:48:00.564 request:
+1 > GET http://localhost:3030/services?id=324
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:3030
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_291)
+
+21:48:00.569 response time in milliseconds: 4.90
+1 < 200
+1 < Access-Control-Allow-Origin: *
+1 < Allow: GET,POST,PUT,PATCH,DELETE
+1 < Connection: keep-alive
+1 < Content-Length: 41
+1 < Content-Type: application/json; charset=utf-8
+1 < Date: Mon, 30 Aug 2021 16:18:00 GMT
+1 < ETag: W/"29-wvD3r5ZFfIWlgjxrzCoRtfXXzZo"
+1 < Keep-Alive: timeout=5
+1 < Vary: Accept, Accept-Encoding
+1 < X-Powered-By: Express
+{"total":0,"limit":10,"skip":0,"data":[]}
+
+21:48:00.594 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
+21:48:00.605 request:
+1 > GET http://localhost:3030/services?ids=324
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:3030
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_291)
+
+21:48:00.631 response time in milliseconds: 25.62
+1 < 500
+1 < Access-Control-Allow-Origin: *
+1 < Allow: GET,POST,PUT,PATCH,DELETE
+1 < Connection: keep-alive
+1 < Content-Length: 138
+1 < Content-Type: application/json; charset=utf-8
+1 < Date: Mon, 30 Aug 2021 16:18:00 GMT
+1 < ETag: W/"8a-TXjktJ2vuetelVhGt51c3Qg6xBQ"
+1 < Keep-Alive: timeout=5
+1 < Vary: Accept-Encoding
+1 < X-Powered-By: Express
+{"name":"GeneralError","message":"SQLITE_ERROR: no such column: service.ids","code":500,"className":"general-error","data":{},"errors":{}}
+
+21:48:00.647 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
+21:48:00.662 request:
+1 > GET http://localhost:3030/services/325234234
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:3030
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_291)
+
+21:48:00.668 response time in milliseconds: 5.13
+1 < 404
+1 < Access-Control-Allow-Origin: *
+1 < Allow: GET,POST,PUT,PATCH,DELETE
+1 < Connection: keep-alive
+1 < Content-Length: 113
+1 < Content-Type: application/json; charset=utf-8
+1 < Date: Mon, 30 Aug 2021 16:18:00 GMT
+1 < ETag: W/"71-kQJ6wZrxdX1bMT1CDb2bQkuW2Z8"
+1 < Keep-Alive: timeout=5
+1 < Vary: Accept-Encoding
+1 < X-Powered-By: Express
+{"name":"NotFound","message":"No record found for id '325234234'","code":404,"className":"not-found","errors":{}}
+
+}
+

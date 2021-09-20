@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = new vis.DataSet([{"id":1,"content":"ForkJoinPool-1-worker-1"}]);
+var items = new vis.DataSet([{"id":1,"group":1,"content":"services_post[1:9]","start":865,"end":1513,"title":"services_post[1:9] 05:30:00.865-05:30:01.513 verify valid response for services"},{"id":2,"group":1,"content":"services_post[2:17]","start":1523,"end":1548,"title":"services_post[2:17] 05:30:01.523-05:30:01.548 verify invalid response for services"},{"id":3,"group":1,"content":"services_get[1:9]","start":1630,"end":1686,"title":"services_get[1:9] 05:30:01.630-05:30:01.686 verify response for services"},{"id":4,"group":1,"content":"services_get[2:16]","start":1694,"end":1759,"title":"services_get[2:16] 05:30:01.694-05:30:01.759 verify name by passing valid id"},{"id":5,"group":1,"content":"services_get[3:23]","start":1770,"end":1829,"title":"services_get[3:23] 05:30:01.770-05:30:01.829 Get id using name"},{"id":6,"group":1,"content":"services_get[4:29]","start":1853,"end":1896,"title":"services_get[4:29] 05:30:01.853-05:30:01.896 verify zero data with invalid id"},{"id":7,"group":1,"content":"services_get[5:37]","start":1906,"end":1949,"title":"services_get[5:37] 05:30:01.906-05:30:01.949 verify 500 response with invalid parameter"},{"id":8,"group":1,"content":"services_get[6:43]","start":1959,"end":1984,"title":"services_get[6:43] 05:30:01.959-05:30:01.984 verify 404 response with invalid id"}]);
+var container = document.getElementById('visualization');
+var timeline = new vis.Timeline(container);
+timeline.setOptions({ groupOrder: 'content' });
+timeline.setGroups(groups);
+timeline.setItems(items);
+</script>
+  </body>
+</html>
